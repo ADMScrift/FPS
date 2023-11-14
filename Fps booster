@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 
-local Window = OrionLib:MakeWindow({Name = "👻FPS Booster👻", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "🟡FPS Booster⚪", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 local FPSTab = Window:MakeTab({
@@ -17,7 +17,6 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-
 FPSTab:AddButton({
     Name = "Remover Textura",
     Callback = function()  ----script logo abaixo:arrow_down::arrow_down::arrow_down:-----
@@ -27,6 +26,17 @@ FPSTab:AddButton({
             end
     end    
 })
+
+FPSTab:AddButton({
+    Name = "Remover textura V2",
+    Callback = function()  ----script logo abaixo:arrow_down::arrow_down::arrow_down:-----
+		loadstring(game:HttpGet('https://pastebin.com/raw/Qn1cfEmN'))()
+
+ 	end    
+ })
+
+
+
 
 FPSTab:AddButton({
     Name = "Remover FOG",
