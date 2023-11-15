@@ -5,7 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "🟡FPS Booster⚪", HidePremium = f
 
 
 local FPSTab = Window:MakeTab({
-	Name = "👻FPS Booster👻",
+	Name = "🟡FPS Booster⚪",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
