@@ -1,0 +1,42 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+
+local Window = OrionLib:MakeWindow({Name = "⚡FPS Booster⚡", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+local FPSTab = Window:MakeTab({
+	Name = "⚡FPS Booster⚡",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Bem vindo!",
+	Content = "Lista ugc Script",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+ FPSTab:AddButton({
+    Name = "FPS Plus +++",
+    Callback = function()  ----script logo abaixo:arrow_down::arrow_down::arrow_down:-----
+		local ToDisable = { 	Textures = true, 	VisualEffects = true, 	Parts = true, 	Particles = true, 	Sky = true }   local ToEnable = { 	FullBright = false }   local Stuff = {}   for _, v in next, game:GetDescendants() do 	if ToDisable.Parts then 		if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then 			v.Material = Enum.Material.SmoothPlastic 			table.insert(Stuff, 1, v) 		end 	end   	if ToDisable.Particles then 		if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then 			v.Enabled = false 			table.insert(Stuff, 1, v) 		end 	end   	if ToDisable.VisualEffects then 		if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then 			v.Enabled = false 			table.insert(Stuff, 1, v) 		end 	end   	if ToDisable.Textures then 		if v:IsA("Decal") or v:IsA("Texture") then 			v.Texture = "" 			table.insert(Stuff, 1, v) 		end 	end   	if ToDisable.Sky then 		if v:IsA("Sky") then 			v.Parent = nil 			table.insert(Stuff, 1, v) 		end 	end end   game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")   for i, v in next, ToDisable do 	print(tostring(i)..": "..tostring(v)) end   if ToEnable.FullBright then     local Lighting = game:GetService("Lighting")       Lighting.FogColor = Color3.fromRGB(255, 255, 255)     Lighting.FogEnd = math.huge     Lighting.FogStart = math.huge     Lighting.Ambient = Color3.fromRGB(255, 255, 255)     Lighting.Brightness = 5     Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)     Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)     Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)     Lighting.Outlines = true end wait(0.001) local player = game.Players.LocalPlayer local character = player.Character local humanoid = character:WaitForChild("Humanoid") local terrain = workspace:WaitForChild("Terrain")  player.CharacterAdded:Connect(onCharacterAdded)  terrain.Touched:Connect(function(part)     if part.Parent == character then         local point = terrain:WorldToTerrainCoordinates(part.Position)         local normal = Vector3.new(0, 0, terrain:GetHeight(point))         character:MoveTo(part.Position + normal)     end end)
+
+ 	end    
+ })
+
+ FPSTab:AddButton({
+    Name = "Remover Todas as texturas",
+    Callback = function()  ----script logo abaixo:arrow_down::arrow_down::arrow_down:-----
+		loadstring(game:HttpGet('https://pastebin.com/raw/Qn1cfEmN'))()
+
+ 	end    
+ })
+
+ FPSTab:AddButton({
+    Name = "Mostrar Fps",
+    Callback = function()  ----script logo abaixo:arrow_down::arrow_down::arrow_down:-----
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
+
+ 	end    
+ })
